@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.example.finances.models.FinanceD;
-import com.example.finances.models.FinanceR;
+import com.example.finances.entities.FinanceD;
+import com.example.finances.entities.FinanceR;
 import com.example.finances.repository.FinanceRepository;
 
 @RestController

@@ -1,31 +1,23 @@
-package com.example.finances.models;
+package com.example.finances.entities;
 
-public class FinanceD{
-    private String nomeDespesa;
-    private double valorDespesa;
+
+public class FinanceR {
+    private String nomeReceita;
+    private double valorReceita;
     private String descricao;
     private Categoria categoria;
-
-    public FinanceD() {
-    }
     
-    public FinanceD(String nomeDespesa, double valorDespesa, String descricao, Categoria categoria) {
-        this.nomeDespesa = nomeDespesa;
-        this.valorDespesa = valorDespesa;
-        this.descricao = descricao;
-        this.categoria = categoria;
+    public String getNomeReceita() {
+        return nomeReceita;
     }
-    public String getNomeDespesa() {
-        return nomeDespesa;
+    public void setNomeReceita(String nomeReceita) {
+        this.nomeReceita = nomeReceita;
     }
-    public void setNomeDespesa(String nomeDespesa) {
-        this.nomeDespesa = nomeDespesa;
+    public double getValorReceita() {
+        return valorReceita;
     }
-    public double getValorDespesa() {
-        return valorDespesa;
-    }
-    public void setValorDespesa(double valorDespesa) {
-        this.valorDespesa = valorDespesa;
+    public void setValorReceita(double valorReceita) {
+        this.valorReceita = valorReceita;
     }
     public String getDescricao() {
         return descricao;
@@ -40,28 +32,33 @@ public class FinanceD{
         this.categoria = categoria;
     }
 
-
+    public FinanceR() {
+    }
+    public FinanceR(String nomeReceita, double valorReceita, String descricao, Categoria categoria) {
+        this.nomeReceita = nomeReceita;
+        this.valorReceita = valorReceita;
+        this.descricao = descricao;
+        this.categoria = categoria;
+    }
     @Override
     public String toString() {
-        return "FinanceD [categoria=" + categoria + ", descricao=" + descricao + ", nomeDespesa=" + nomeDespesa
-                + ", valorDespesa=" + valorDespesa + "]";
+        return "FinanceR [categoria=" + categoria + ", descricao=" + descricao + ", nomeReceita=" + nomeReceita
+                + ", valorReceita=" + valorReceita + "]";
     }
 
-   
-
+    
     @Override
     public int hashCode() {
         final int prime = 31;
         int result = 1;
         result = prime * result + ((categoria == null) ? 0 : categoria.hashCode());
         result = prime * result + ((descricao == null) ? 0 : descricao.hashCode());
-        result = prime * result + ((nomeDespesa == null) ? 0 : nomeDespesa.hashCode());
+        result = prime * result + ((nomeReceita == null) ? 0 : nomeReceita.hashCode());
         long temp;
-        temp = Double.doubleToLongBits(valorDespesa);
+        temp = Double.doubleToLongBits(valorReceita);
         result = prime * result + (int) (temp ^ (temp >>> 32));
         return result;
     }
-
     @Override
     public boolean equals(Object obj) {
         if (this == obj)
@@ -70,7 +67,7 @@ public class FinanceD{
             return false;
         if (getClass() != obj.getClass())
             return false;
-        FinanceD other = (FinanceD) obj;
+        FinanceR other = (FinanceR) obj;
         if (categoria != other.categoria)
             return false;
         if (descricao == null) {
@@ -78,12 +75,12 @@ public class FinanceD{
                 return false;
         } else if (!descricao.equals(other.descricao))
             return false;
-        if (nomeDespesa == null) {
-            if (other.nomeDespesa != null)
+        if (nomeReceita == null) {
+            if (other.nomeReceita != null)
                 return false;
-        } else if (!nomeDespesa.equals(other.nomeDespesa))
+        } else if (!nomeReceita.equals(other.nomeReceita))
             return false;
-        if (Double.doubleToLongBits(valorDespesa) != Double.doubleToLongBits(other.valorDespesa))
+        if (Double.doubleToLongBits(valorReceita) != Double.doubleToLongBits(other.valorReceita))
             return false;
         return true;
     }

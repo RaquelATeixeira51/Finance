@@ -1,4 +1,4 @@
-package com.example.finances.models;
+package com.example.finances.entities;
 
 public class ActualFinance {
     private double saldo;
